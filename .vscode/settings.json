@@ -1,0 +1,11 @@
+{
+    "C_Cpp.errorSquiggles": "enabled"
+   
+    // Controls if quick suggestions should show up or not while typing
+    "editor.quickSuggestions": true,
+
+    // Enables parameter hints
+    "editor.parameterHints": false,
+
+    // Controls if suggestions should automatically show up when typing trigger characters
+    "editor.suggestOnTriggerCharacters": false,    
