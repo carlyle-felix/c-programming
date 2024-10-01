@@ -11,21 +11,21 @@ int main(void){
     printf("Enter second date (mm/dd/yy):    ");
     scanf("%d/%d/%d", &mm2, &dd2, &yy2);
     
-    if (yy1 < yy2){ //if first year is greater than second
+    if (yy1 < yy2){ 
         yy_low = yy1;
         yy_hi = yy2;
         mm_low = mm1;
         mm_hi = mm2;
         dd_low = dd1;
         dd_hi = dd2;
-    } else if (yy1 == yy2){ // if years are the same
+    } else if (yy1 == yy2){ 
         yy_low = yy_hi = yy1;
         if (mm1 < mm2){ 
             mm_low = mm1;
             mm_hi = mm2;
             dd_low = dd1;
             dd_hi = dd2;
-        } else if (mm1 == mm2){ //if months are the same
+        } else if (mm1 == mm2){ 
             mm_low = mm_hi = mm1;
             if (dd1 < dd2){
                 dd_low = dd1;
@@ -49,8 +49,7 @@ int main(void){
         dd_low = dd2;
         dd_hi = dd1;
     }
-    
-    
+     
     if (mm1 == mm2 && dd1 == dd2 && yy1 == yy2) 
         printf("Those are the same dates.\n");
     else 
