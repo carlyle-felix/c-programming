@@ -1,13 +1,9 @@
+// adds two fractions
 #include <stdio.h>
+
 int main(void){
     
     int num1, denom1, num2, denom2, result_num, result_denom;
-    
-    //printf("Enter first fraction: ");
-    //scanf("%d/%d", &num1, &denom1);
-
-    //printf("Enter second fraction: ");
-    //scanf("%d/%d", &num2, &denom2);
 
     printf("Enter two fractions seperated by a plus sign:   ");
     scanf("%d/%d + %d/%d", &num1, &denom1, &num2, &denom2);
