@@ -16,7 +16,7 @@ int main(void){
     // departure times in minutesutes since midnight
     d1 = 8 * 60;
     d2 = 9 * 60 + 43;
-    d3 = 11 * 60 + 11;
+    d3 = 11 * 60 + 19;
     d4 = 12 * 60 + 47;
     d5 = 14 * 60;
     d6 = 15 * 60 + 45;
