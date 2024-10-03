@@ -27,7 +27,7 @@ int main(void){
 
     printf("Closest departure time is:  ");
 
-    if (minutes < d8_d1)
+    if (minutes < d8_d1 || minutes > (d7 + d8) / 2)
         printf("9:45 p.m., arriving at 11:58 p.m.\n");
     else if (minutes < (d1 + d2) / 2)
         printf("8:00 a.m., arriving at 10:16 a.m.\n");
