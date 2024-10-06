@@ -25,7 +25,7 @@ int main(void) {
         printf("%3d   ", year);
         for (i = 0; i < NUM_RATES; i++) {
             for (j = 1; j <= 12; j++) {
-            value[i] *= 1 + (((float) low_rate + i) / 100) / 12;
+            value[i] *= 1 + (((double) low_rate + i) / 100) / 12;
             }
             printf("%7.2f", value[i]);
         }
