@@ -15,6 +15,7 @@ int main(void) {
             scanf("%f", &num[row][col]);
         }
     }
+    
     printf("\nSTUDENT:\n");
     for (sum = 0, row = 0; row < STUDENT_NUMBER; row++, sum = 0) {
         for (col = 0; col < QUIZ_NUMBER; col++) {
@@ -24,6 +25,7 @@ int main(void) {
         sum /= col;
         printf("Average: %.2f\n", sum);
     }
+
     printf("\nQUIZ:\n");
     for (sum = 0, col = 0, col_max = num[0][col], col_min = num[0][col]; col < QUIZ_NUMBER; col++, col_max = num[0][col], col_min = num[0][col], sum = 0) {
         for (row = 0; row < STUDENT_NUMBER; row++) {
