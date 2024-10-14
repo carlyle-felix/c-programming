@@ -12,7 +12,6 @@ int main(void) {
         r = m % n;
         m = n;
         n = r;
-        printf("r:  %d\n", r);
     }
 
     printf("Greatest common divisor:    %d\n", m);
