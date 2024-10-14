@@ -24,4 +24,5 @@ int main(void){
 
     printf("Tax due:    $%.2f\n", i);
 
+    return 0;
 }
