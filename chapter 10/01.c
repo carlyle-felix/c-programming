@@ -1,3 +1,4 @@
+// Check whether or not parentheses and/or braces are nested correctly
 #include <stdio.h>
 #include <stdbool.h> /* C99 only */
 #include <stdlib.h>
