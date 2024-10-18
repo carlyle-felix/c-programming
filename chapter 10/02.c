@@ -18,7 +18,6 @@ void print_result(void);
 
 // main: Calls read_cards, analyze_hand, and print_result *
 //       repeatedly.
-
 int main(void) {
     
     int num_in_rank[NUM_RANKS], num_in_suit[NUM_SUITS];
@@ -87,7 +86,7 @@ void read_cards(int num_in_rank[], int num_in_suit[]) {
         if (bad_card)
             printf("Bad card; ignored.\n");
         else if (card_exists[rank][suit])
-        printf("Duplicate card; ignored.\n");
+            printf("Duplicate card; ignored.\n");
         else {
             num_in_rank[rank]++;
             num_in_suit[suit]++;
