@@ -9,16 +9,16 @@ void process_digit(int digit, int position);
 void print_digits_array(void);
 
 // external arrays
-const int segments[MAX_DIGITS][NUM_SEG] =    {{1, 1, 1, 1, 1, 1},
-                                        {0, 1, 1},
-                                        {1, 1, 0, 1, 1, 0, 1},
-                                        {1, 1, 1, 1, 0, 0, 1},
-                                        {0, 1, 1, 0, 0, 1, 1},
-                                        {1, 0, 1, 1, 0, 1, 1},
-                                        {1, 0, 1, 1, 1, 1, 1},
-                                        {1, 1, 1},
-                                        {1, 1, 1, 1, 1, 1, 1},
-                                        {1, 1, 1, 1, 0, 1, 1}};
+const int segments[MAX_DIGITS][NUM_SEG] =  {{1, 1, 1, 1, 1, 1},
+                                            {0, 1, 1},
+                                            {1, 1, 0, 1, 1, 0, 1},
+                                            {1, 1, 1, 1, 0, 0, 1},
+                                            {0, 1, 1, 0, 0, 1, 1},
+                                            {1, 0, 1, 1, 0, 1, 1},
+                                            {1, 0, 1, 1, 1, 1, 1},
+                                            {1, 1, 1},
+                                            {1, 1, 1, 1, 1, 1, 1},
+                                            {1, 1, 1, 1, 0, 1, 1}};
 char digits[4][MAX_DIGITS * 4];
 
 int main(void){
