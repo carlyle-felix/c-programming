@@ -21,11 +21,9 @@ void print_result(void);
 //       repeatedly.
 int main(void) {
     
-    
-    
     for (;;) {
-        read_cards(num_in_rank, num_in_suit);
-        analyze_hand(num_in_rank, num_in_suit);
+        read_cards();
+        analyze_hand();
         print_result();
     }
 }
