@@ -2,17 +2,24 @@
 #include <stdio.h>
 #include <ctype.h>
 
+#define LEN 100
+
 int main(void) {
 
-    char word[100], ch;
+    char word[LEN], ch;
     int i, j, end;
 
     printf("Enter a sentence:   ");
 
-    for (i = 1; (ch = tolower(getchar())) != '.' && ch != '?' && ch != '!'; i++) {
+    for (i = 1; i < LEN && (ch = tolower(getchar())) != '.' && ch != '?' && ch != '!'; i++) {
         word[i] = ch;
     }
     end = i;
+
+    if (i > LEN - 1) {
+        printf("%d characters exceeded.\n", LEN);
+        return 1;
+    }
 
     for (i = i; i >= 0; i--) {
         if (word[i - 1] == ' ') {
