@@ -13,7 +13,7 @@ int main(void) {
     
     p--;
     printf("Reversal is:    ");
-    while (p >= letters + 0) {
+    while (p >= letters) {
         putchar(*p--);
     }
     printf("\n");
