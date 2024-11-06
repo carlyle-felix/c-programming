@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_REMIND 50   // maximum number of reminders
+#define MAX_REMIND 366   // maximum number of reminders
 #define MSG_LEN 60      // max length of reminder message
 
 int read_line(char str[], int n);
@@ -10,8 +10,8 @@ int read_line(char str[], int n);
 int main(void) {
 
     char reminders[MAX_REMIND][MSG_LEN + 3];
-    char day_str[3], msg_str[MSG_LEN + 1];
-    int day, i, j, num_remind = 0;
+    char date_str[13], msg_str[MSG_LEN + 1], c;
+    int day, i, j, num_remind = 0, hour, minute, month, calendar_months[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     for (;;) {
 
@@ -20,16 +20,21 @@ int main(void) {
             break;
         }
         
-        printf("Enter day and reminder: ");
-        scanf("%2d", &day);
-        if (day == 0) {
+        printf("Enter date (mm/dd), 24-hour time (hh:mm) and reminder: ");
+        scanf("%2d/%2d", &month, &day);
+        if (month == 0) {
             break;
+        } else if (day > 31 || day < 0) {
+            printf("Error: Invalid date.\n");
+            while ((c = getchar()) != '\n');
+            continue;
         }
-        sprintf(day_str, "%2d", day);
+        scanf("%2d:%2d", &hour, &minute);
+        sprintf(date_str, "%2.2d/%-2.2d %2.2d:%2.2d ", month, day, hour, minute);
         read_line(msg_str, MSG_LEN);
         
         for (i = 0; i < num_remind; i++) {
-            if (strcmp(day_str, reminders[i]) < 0) {
+            if (strcmp(date_str, reminders[i]) < 0) {
                 break;
             }
         }
@@ -37,13 +42,13 @@ int main(void) {
             strcpy(reminders[j], reminders[j - 1]);
         }
 
-        strcpy(reminders[i], day_str);
+        strcpy(reminders[i], date_str);
         strcat(reminders[i], msg_str);
 
         num_remind++;
     }
 
-    printf("\nDay Reminder\n");
+    printf("\n  Date  Time  Reminder\n");
     for (i = 0; i < num_remind; i++) {
         printf(" %s\n", reminders[i]);
     }
@@ -59,6 +64,6 @@ int read_line(char str[], int n) {
         }
     }
     str[i] = '\0';
-    
+
     return i;
 }
