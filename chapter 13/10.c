@@ -19,16 +19,20 @@ int main(void) {
 
 void reverse_name(char *name) {
 
-    char ch, first[4], last[26], *c = last;
+    char ch, first[5], last[26], *c = last;
     int i;
 
-    ch = toupper(*name);
-    sprintf(first, ", %c", ch);
+    for (i = 0; name[i] == ' '; i++);
+    ch = toupper(name[i]);
+    sprintf(first, ", %c.", ch);
 
-    for (i = 1; name[i] != ' '; i++);
-   
-    *c++ = toupper(name[++i]);
-    for (++i; name[i]; i++) {
+    for (; name[i] != ' '; i++);
+    while (name[i] == ' ') {
+        i++;
+    }
+
+    *c++ = toupper(name[i]);
+    for (++i; name[i] && name[i] != ' '; i++) {
         *c++ = name[i];
     }
     
