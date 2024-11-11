@@ -24,7 +24,8 @@ int main(void) {
     char ch;
 
     while (1) {
-
+        
+        make_empty(); 
         printf("Enter an RPN expression:    ");
         scanf(" %c", &ch);
         while (ch != '=' && ch != 'q') {
@@ -48,7 +49,8 @@ int main(void) {
         }  
         if (ch == 'q')
             break;
-        printf("\nValue of expression:    %d\n", pop());   
+        printf("\nValue of expression:    %d\n", pop());  
+    
     }
 
     return 0;
