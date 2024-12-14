@@ -14,6 +14,10 @@ int main(void){
 
     struct date d1, d2;
     int test;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5ca9134 (complete chapter 16)
     printf("Enter first date (mm/dd/yy):    ");
     scanf("%d/%d/%d", &d1.month, &d1.day, &d1.year);
     printf("Enter second date (mm/dd/yy):    ");
