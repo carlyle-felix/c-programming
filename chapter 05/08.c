@@ -13,7 +13,7 @@ int main(void){
     else 
         minutes = hh * 60 + mm;
 
-    // departure times in minutesutes since midnight
+    // departure times in minutes since midnight
     d1 = 8 * 60;
     d2 = 9 * 60 + 43;
     d3 = 11 * 60 + 19;
