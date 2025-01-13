@@ -1,4 +1,4 @@
-// Maintains a parts database (linked list version)
+// Maintains a parts database (array version)
 
 #include <stdio.h>
 #include <stdlib.h>
