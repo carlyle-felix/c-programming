@@ -23,6 +23,7 @@ void clear_line(void) {
     while (line != NULL) {
         temp = line;
         line = line->next;
+        free(temp->word);
         free(temp);
     }
     line_len = 0;
@@ -32,7 +33,6 @@ void clear_line(void) {
 void add_word(const char *word) {
 
     struct node *new_word;
-    char *temp_word;
 
     // Allocate memory for new_word node.
     new_word = malloc(sizeof(struct node));
