@@ -3,6 +3,6 @@ This repository contains my solutions to the projects found in K. N. King's C Pr
 ***
 
 to-do:
-- [ ] modify chapter 17 project 5 so that it does not use the stdlib qsort function.
+- [x] modify chapter 17 project 5 so that it does not use the stdlib qsort function.
 
 ***
