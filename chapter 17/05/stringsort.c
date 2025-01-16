@@ -37,7 +37,7 @@ void str_sort(char *str[], int n_elem, int max_str_len) {
         
         str[str_num] = realloc(str[str_num], (sizeof(char) * strlen(s[str_num])) + 1);
         if (s[str_num] == NULL) {
-            printf("Error: realloc failed to resize word[%d].\n", i + 1);
+            printf("Error: realloc failed to resize word[%d].\n", str_num);
             exit(EXIT_FAILURE);
         }
         
