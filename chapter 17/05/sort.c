@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "readline.h"
+#include "stringsort.h"
 
 #define MAX_WORDS 50
 #define MAX_WORD_LEN 20
-
-int compare(const void *p1, const void *p2);
 
 int main(void) {
 
@@ -29,15 +28,9 @@ int main(void) {
             free(word[i]);
             break;
         }
-
-        word[i] = realloc(word[i], count);
-        if (word[i] == NULL) {
-            printf("Error: realloc failed to resize word[%d].\n", i + 1);
-            exit(EXIT_FAILURE);
-        }
     }
 
-    qsort(word, i, sizeof(char *), compare);
+    str_sort(word, i, MAX_WORD_LEN);
 
     printf("In sorted order: ");
     for (count = i, i = 0; i < count; i++) {
@@ -46,9 +39,4 @@ int main(void) {
     putchar('\n');
 
     return 0;
-}
-
-int compare(const void *p1, const void *p2) {
-
-    return strcmp(*(char **)p1, *(char **)p2);
 }
