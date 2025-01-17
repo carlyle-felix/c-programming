@@ -1,4 +1,4 @@
-// Sort s series of words entered by the user
+// Sort a series of words entered by the user
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
