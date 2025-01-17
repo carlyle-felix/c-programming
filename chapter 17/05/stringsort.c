@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "stringsort.h"
 
-void str_sort(char *str[], int n_elem, int max_str_len) {
+void str_sort(char **str, int n_elem, int max_str_len) {
 
     char *s[n_elem];
     int str_num, pos, i;
