@@ -10,9 +10,9 @@ void str_sort(char **str, int n_elem, int max_str_len) {
 
     for (i = 0; i < n_elem; i++) {
 
-        s[i] = calloc(n_elem, sizeof(char));
+        s[i] = malloc(max_str_len + 1);
         if (s[i] == NULL) {
-            printf("Error: calloc failed to allocate space for s[%d] in str_sort", i);
+            printf("Error: malloc failed to allocate space for s[%d] in str_sort", i);
             exit(EXIT_FAILURE);
         }
     }
