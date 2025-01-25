@@ -2,12 +2,16 @@
 #include "stack.h"
 
 // external variables
-#define STACK_SIZE 100
+struct node {
+    char c;
+    struct node *next;
+};
 
 struct stack_type {
-    char contents[STACK_SIZE];
-    int top;
+    struct node *top;
 };
+
+static void terminate(const char *message);
 
 bool underflow = false;
 
@@ -15,55 +19,79 @@ Stack create(void){
 
     Stack p = malloc(sizeof(struct stack_type));
     if (p == NULL) {
-        printf("Error: malloc failed to allocate space for new stack.\n");
-        exit(EXIT_FAILURE);
+        terminate("Error: malloc failed to allocate space for new stack.");
     }
-    p->top = 0;
+    p->top = NULL;
 
     return p;
 }
 
 void destroy(Stack p) {
 
+    make_empty(p);
     free(p);
 }
 
 void make_empty(Stack p) {
     
-    p->top = 0;
+    while (!is_empty(p)) {
+        pop(p);
+    }
 }
 
 bool is_empty(Stack p) {
 
-    return p->top == 0;
+    return p->top == NULL;
 }
 
 bool is_full(Stack p) {
     
-    return p->top == STACK_SIZE;
+    return false;
 }
 
-void push(Stack p, char i) {
+void push(Stack p, char c) {
     
-    if (is_full(p))
-        stack_overflow();
-    else 
-        p->contents[p->top++] = i;
+    struct node *temp = malloc(sizeof(struct node));
+    if (temp == NULL) {
+        terminate("Error: malloc failed to allocate space.");
+    }
+    temp->c = c;
+    temp->next = p->top;
+    p->top = temp;
 }
 
 char pop(Stack p) {
 
-    if (is_empty(p))
+    char c;
+
+    if (is_empty(p)) {
         stack_underflow();
-    else 
-        return p->contents[--p->top];
+    } else {
+        struct node *temp = malloc(sizeof(struct node));
+        if (temp == NULL) {
+            terminate("Error: malloc failed to allocate space.");
+        }
+        temp = p->top;
+        c = temp->c;
+        p->top = temp->next;
+        free(temp);
+    }
+
+    return c;
 }
 
 void stack_overflow(void){
+
     printf("Stack overflow\n");
     exit(EXIT_FAILURE);
 }
 
 void stack_underflow(void){
+
     underflow = true;
+}
+
+static void terminate(const char *message) {
+    printf("%s\n", message);
+    exit(EXIT_FAILURE);
 }
