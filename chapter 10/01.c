@@ -42,6 +42,8 @@ int main(void) {
         printf("Parentheses/braces are nested correctly.\n");
     else 
         printf("Parentheses/braces are nested incorrectly.\n");
+
+    return 0;
 }
 
 void make_empty(void) {

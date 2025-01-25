@@ -27,6 +27,8 @@ int main(void) {
         analyze_hand(num_in_rank, num_in_suit);
         print_result();
     }
+
+    return 0;
 }
 
 // read_cards: Reads the cards into the external
