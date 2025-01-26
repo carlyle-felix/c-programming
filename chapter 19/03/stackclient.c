@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "stackADT.h"
 
+void print_len(Stack s, char *stackname);
+
 int main(void) {
 
     Stack s1, s2;
@@ -10,31 +12,32 @@ int main(void) {
     s2 = create();
 
     push(s1, 1);
-    printf("Length of Stack s1: %d\n", length(s1));
+    print_len(s1, "Stack 1");
     push(s1, 2);
-    printf("Length of Stack s1: %d\n", length(s1));
+    print_len(s1, "Stack 1");
 
     n = pop(s1);
-    printf("Length of Stack s1: %d\n", length(s1));
+    print_len(s1, "Stack 1");
     printf("Popped %d from s1\n", n);
     push(s2, n);
-    printf("Length of Stack s2: %d\n", length(s2));
+    print_len(s2, "Stack 2");
     n = pop(s1);
-    printf("Length of Stack s1: %d\n", length(s1));
+    print_len(s1, "Stack 1");
     printf("Popped %d from s1\n", n);
     push(s2, n);
-    printf("Length of Stack s2: %d\n", length(s2));
+    print_len(s2, "Stack 2");
 
     destroy(s1);
 
     while (!is_empty(s2)) {
         printf("Popped %d from s2\n", pop(s2));
-        printf("Length of Stack s2: %d\n", length(s2));
+        print_len(s2, "Stack 2");
     }
 
     push(s2, 3);
-    printf("Length of Stack s2: %d\n", length(s2));
+    print_len(s2, "Stack 2");
     make_empty(s2);
+    print_len(s2, "Stack 2");
     if (is_empty(s2)) {
         printf("s2 is empty\n");
     } else {
@@ -44,4 +47,9 @@ int main(void) {
     destroy(s2);
 
     return 0;
+}
+
+void print_len(Stack s, char *stackname) { 
+
+    printf("Length of %s: %d\n", stackname, length(s));
 }
