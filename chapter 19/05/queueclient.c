@@ -1,3 +1,5 @@
+// Test ADT queue
+
 #include <stdio.h>
 #include "queue.h"
 
