@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "queue.h"
 
-#define Q_MAX_LEN 50
-
 struct node {
     Item item;
     struct node *next;
